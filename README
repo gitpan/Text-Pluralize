@@ -1,0 +1,57 @@
+NAME
+
+    Text::Pluralize - simple pluralization routine
+
+SYNOPSIS
+
+    use Text::Pluralize;
+
+    print pluralize("file", $count);
+    print pluralize("%d file(s) copied\n"), $count;
+    print pluralize("There (was|were) {no|one|%d} error(s)\n", $count);
+
+DESCRIPTION
+
+Text::Pluralize provides a lightweight routine to produce the proper form,
+singular or plural, of a word or phrase. Its intended purpose is to produce
+messages for the user, whether error messages or informational messages, without
+the awkward "1 file(s) copied" appearance.
+
+EXAMPLES
+
+In each of the examples below, the first column represents the template, the
+second column the count, and the third column the result.
+
+    item                            0   items
+                                    1   item
+                                    2   items
+
+    item(s) need{|s|} attention     0   items need attention
+                                    1   item needs attention
+                                    2   items need attention
+
+    {No|%d} quer(y|ies) (is|are)    0   No queries are
+                                    1   1 query is
+                                    2   2 queries are
+
+    {No|One|Two|Three|%d} item(s)   0   No items
+                                    1   One item
+                                    2   Two items
+                                    3   Three items
+                                    4   4 items
+
+INSTALLATION
+
+Use the standard incantation:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+COPYRIGHT AND LICENCE
+
+Copyright 2004 Kevin Michael Vail
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
