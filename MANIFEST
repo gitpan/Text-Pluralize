@@ -1,7 +1,6 @@
-Changes
-Makefile.PL
 MANIFEST
+Makefile.PL
 README
-t/Text-Pluralize.t
 lib/Text/Pluralize.pm
+t/Text-Pluralize.t
 META.yml                                 Module meta-data (added by MakeMaker)
